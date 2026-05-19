@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openemr
+  labels:
+    app: openemr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: openemr
+  template:
+    metadata:
+      labels:
+        app: openemr
+    spec:
+      containers:
+      - name: openemr
+        image: openemr/openemr:7.0.2
+        ports:
+        - containerPort: 80
+        - containerPort: 443
+        env:
+        - name: MYSQL_HOST
+          value: mysql
+        - name: MYSQL_ROOT_PASS
+          valueFrom:
+            secretKeyRef:
+              name: openemr-secrets
+              key: mysql-root-password
+        - name: MYSQL_USER
+          value: openemr
+        - name: MYSQL_PASS
+          valueFrom:
+            secretKeyRef:
+              name: openemr-secrets
+              key: mysql-password
+        - name: OE_USER
+          value: admin
+        - name: OE_PASS
+          value: admin
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
