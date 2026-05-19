@@ -1,0 +1,11 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Warehouse
+metadata:
+  name: openemr-warehouse
+  namespace: openemr
+spec:
+  subscriptions:
+  - image:
+      repoURL: openemr/openemr
+      semverConstraint: ">=7.0.0"
+      discoveryLimit: 5
