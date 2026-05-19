@@ -4,5 +4,8 @@ namespace: openemr-staging
 resources:
 - ../../base
 - secret.yaml
+images:
+- name: openemr/openemr
+  newTag: "7.0.2"
 patches:
 - path: replicas-patch.yaml
