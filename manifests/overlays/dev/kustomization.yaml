@@ -9,3 +9,4 @@ images:
   newTag: 8.1.1
 patches:
 - path: replicas-patch.yaml
+# demo test Wed May 20 09:39:10 EAT 2026

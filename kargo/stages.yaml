@@ -28,10 +28,11 @@ spec:
       - uses: git-commit
         config:
           path: ./repo
-          message: "chore: promote openemr to dev ${{ imageFrom(\"openemr/openemr\").Tag }}"
+          message: "chore: promote openemr to dev"
       - uses: git-push
         config:
           path: ./repo
+          targetBranch: main
       - uses: argocd-update
         config:
           apps:
@@ -69,10 +70,11 @@ spec:
       - uses: git-commit
         config:
           path: ./repo
-          message: "chore: promote openemr to staging ${{ imageFrom(\"openemr/openemr\").Tag }}"
+          message: "chore: promote openemr to staging"
       - uses: git-push
         config:
           path: ./repo
+          targetBranch: main
       - uses: argocd-update
         config:
           apps:
@@ -110,10 +112,11 @@ spec:
       - uses: git-commit
         config:
           path: ./repo
-          message: "chore: promote openemr to prod ${{ imageFrom(\"openemr/openemr\").Tag }}"
+          message: "chore: promote openemr to prod"
       - uses: git-push
         config:
           path: ./repo
+          targetBranch: main
       - uses: argocd-update
         config:
           apps:
