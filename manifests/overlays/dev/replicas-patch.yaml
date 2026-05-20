@@ -10,8 +10,8 @@ spec:
       - name: openemr
         resources:
           requests:
-            memory: "256Mi"
+            memory: "348Mi"
             cpu: "100m"
           limits:
-            memory: "512Mi"
+            memory: "768Mi"
             cpu: "250m"
