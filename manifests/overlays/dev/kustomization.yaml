@@ -10,3 +10,4 @@ images:
 patches:
 - path: replicas-patch.yaml
 # demo test Wed May 20 09:39:10 EAT 2026
+# manual ui test Wed May 20 09:57:34 EAT 2026
